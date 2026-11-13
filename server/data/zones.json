@@ -1,0 +1,208 @@
+{
+  "zones": [
+    {
+      "id": "lot-gangnam-a",
+      "type": "parking",
+      "name": "강남역 A주차장",
+      "center": [
+        37.4979,
+        127.0276
+      ],
+      "polygon": [
+        [
+          37.497675,
+          127.027204
+        ],
+        [
+          37.497675,
+          127.027996
+        ],
+        [
+          37.498125,
+          127.027996
+        ],
+        [
+          37.498125,
+          127.027204
+        ]
+      ],
+      "capacity": 120,
+      "available": 15,
+      "guidance": true,
+      "fee": {
+        "baseMin": 30,
+        "baseFee": 3600,
+        "unitMin": 10,
+        "unitFee": 1200,
+        "dailyMax": null
+      }
+    },
+    {
+      "id": "lot-gangnam-b",
+      "type": "parking",
+      "name": "강남 B주차장",
+      "center": [
+        37.4998,
+        127.0298
+      ],
+      "polygon": [
+        [
+          37.499575,
+          127.029404
+        ],
+        [
+          37.499575,
+          127.030196
+        ],
+        [
+          37.500025,
+          127.030196
+        ],
+        [
+          37.500025,
+          127.029404
+        ]
+      ],
+      "capacity": 80,
+      "available": 32,
+      "guidance": true,
+      "fee": {
+        "baseMin": 30,
+        "baseFee": 3000,
+        "unitMin": 10,
+        "unitFee": 1000,
+        "dailyMax": 50000
+      }
+    },
+    {
+      "id": "lot-gangnam-c",
+      "type": "parking",
+      "name": "강남 C공영주차장",
+      "center": [
+        37.4955,
+        127.029
+      ],
+      "polygon": [
+        [
+          37.495275,
+          127.028604
+        ],
+        [
+          37.495275,
+          127.029396
+        ],
+        [
+          37.495725,
+          127.029396
+        ],
+        [
+          37.495725,
+          127.028604
+        ]
+      ],
+      "capacity": 200,
+      "available": 4,
+      "guidance": true,
+      "fee": {
+        "baseMin": 5,
+        "baseFee": 400,
+        "unitMin": 5,
+        "unitFee": 400,
+        "dailyMax": 30000
+      }
+    },
+    {
+      "id": "lot-daechi-public",
+      "type": "parking",
+      "name": "대치2동 공영주차장",
+      "center": [
+        37.499,
+        127.06
+      ],
+      "polygon": [
+        [
+          37.498775,
+          127.059604
+        ],
+        [
+          37.498775,
+          127.060396
+        ],
+        [
+          37.499225,
+          127.060396
+        ],
+        [
+          37.499225,
+          127.059604
+        ]
+      ],
+      "capacity": 60,
+      "available": 11,
+      "guidance": true,
+      "fee": {
+        "baseMin": 5,
+        "baseFee": 250,
+        "unitMin": 5,
+        "unitFee": 250,
+        "dailyMax": 20000
+      }
+    },
+    {
+      "id": "pickup-daechi-official",
+      "type": "pickup_official",
+      "name": "대치 학원가 어린이 승하차구역",
+      "center": [
+        37.4987,
+        127.059
+      ],
+      "polygon": [
+        [
+          37.498628,
+          127.058774
+        ],
+        [
+          37.498628,
+          127.059226
+        ],
+        [
+          37.498772,
+          127.059226
+        ],
+        [
+          37.498772,
+          127.058774
+        ]
+      ],
+      "guidance": true
+    },
+    {
+      "id": "pickup-gangnam-official",
+      "type": "pickup_official",
+      "name": "강남역 11번 출구 승하차구역",
+      "center": [
+        37.4982,
+        127.0285
+      ],
+      "polygon": [
+        [
+          37.498128,
+          127.028274
+        ],
+        [
+          37.498128,
+          127.028726
+        ],
+        [
+          37.498272,
+          127.028726
+        ],
+        [
+          37.498272,
+          127.028274
+        ]
+      ],
+      "guidance": true
+    }
+  ]
+}

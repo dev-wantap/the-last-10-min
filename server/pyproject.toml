@@ -1,0 +1,29 @@
+[project]
+name = "last10-server"
+version = "0.1.0"
+description = "마지막 10분: 익명 이벤트 집계, 소요 시간 예측, 승하차 혼잡 지점 발견 서버"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn>=0.32",
+    "numpy>=2.0",
+    "scikit-learn>=1.5",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "httpx>=0.27",
+]
+
+[tool.uv]
+package = false
+
+[tool.basedpyright]
+venvPath = "."
+venv = ".venv"
+extraPaths = ["."]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
