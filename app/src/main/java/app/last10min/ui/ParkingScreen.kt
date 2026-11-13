@@ -121,7 +121,9 @@ private fun BestParkingCard(best: ParkingOption, nearest: ParkingOption?, cheape
                 feeDiff > 0 -> " · ${won(feeDiff)} 저렴해요"
                 else -> " · ${won(-feeDiff)} 더 들어요"
             }
-            PText("가장 가까운 ${nearest.zone.name}보다 ${minutes(faster)}분 빨라요$feeText", PleosType.bodyMediumStrong, c.textSecondary)
+            val fasterMin = minutes(faster)
+            val timeText = if (fasterMin == "0") "와 도착 시각이 같아요" else "보다 ${fasterMin}분 빨라요"
+            PText("가장 가까운 ${nearest.zone.name}$timeText$feeText", PleosType.bodyMediumStrong, c.textSecondary)
         }
         Spacer(Modifier.height(24.dp))
         PButton("여기로 안내", modifier = Modifier.fillMaxWidth(), onClick = onGo)
