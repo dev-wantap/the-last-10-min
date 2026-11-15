@@ -14,7 +14,7 @@ class SensingService : Service() {
         val manager = getSystemService(NotificationManager::class.java)
         manager.createNotificationChannel(NotificationChannel(CHANNEL, "주차·승하차 감지", NotificationManager.IMPORTANCE_LOW))
         val notification = Notification.Builder(this, CHANNEL)
-            .setContentTitle("마지막 10분")
+            .setContentTitle("트루파킹")
             .setContentText("주차·승하차 상태를 감지하고 있어요")
             .setSmallIcon(android.R.drawable.ic_menu_mylocation)
             .build()

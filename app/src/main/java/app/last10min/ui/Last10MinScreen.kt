@@ -48,7 +48,7 @@ fun Last10MinScreen(graph: AppGraph) {
                         Spacer(Modifier.height(16.dp))
                         Column(Modifier.verticalScroll(rememberScrollState()).padding(bottom = 24.dp)) { SignalsScreen(graph) }
                     } else {
-                        PPageNavigation("\ub9c8\uc9c0\ub9c9 10\ubd84") {
+                        PPageNavigation("트루파킹") {
                             if (wide) {
                                 PTabs(Mode.entries, mode, { it.label }, Modifier.width(360.dp)) { mode = it }
                                 Spacer(Modifier.width(16.dp))

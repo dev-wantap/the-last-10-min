@@ -1,4 +1,4 @@
-# 마지막 10분 (가칭)
+# 트루파킹
 
 **Pleos 차량이 주차·픽업에 걸린 시간을 직접 재고 모아, 목적지에 진짜로 도착하는 시간을 알려 주는 Pleos Connect 앱**
 
@@ -10,12 +10,29 @@
 
 | 항목 | 내용 |
 |---|---|
-| 앱 이름 | 마지막 10분 (가칭) |
+| 팀 | 사이클링크 |
+| 앱 이름 | 트루파킹 |
 | 한 줄 소개 | Pleos 차량이 주차·픽업에 걸린 시간을 직접 재고 모아, 목적지에 진짜로 도착하는 시간을 알려 줍니다. |
-| APK | [`apk/팀명_앱이름_release.apk`](apk/) (release, 서명됨) |
+| APK | [`apk/사이클링크_트루파킹_release.apk`](apk/사이클링크_트루파킹_release.apk) (release, 서명됨) |
 | 패키지 | `app.last10min`, 버전 0.1.0 (versionCode 1) |
 | 개발·검증 에뮬레이터 | Pleos Connect Emulator **v2.1.0** (`RELEASE.release_connect_v2.1.0`), Android Automotive 14 (API 34), arm64 |
 | 화면 규격 | **2560 × 1440**, 160 dpi, 가로 방향 |
+
+## 작동 방식
+
+![여러 Pleos 차량의 익명 기록이 집계 서버에 모여 다음 차의 예측이 되는 구조](docs/images/concept.png)
+
+각 차량은 기어·문·좌석 신호로 주차와 승하차가 끝난 순간을 차 안에서 판정하고, 구역·시간대·걸린 시간만 익명으로 보냅니다. 서버는 같은 구역·같은 시간대의 기록을 모아 자리 찾기와 승하차에 걸리는 시간을 추정하고, 다음 차는 그 추정으로 가장 빨리 도착하는 주차장과 출발 시각을 안내받습니다. 그림 원본은 `docs/diagram/concept.html`입니다.
+
+## 화면
+
+| 주차 | 픽업 |
+|---|---|
+| ![주차 화면: 목적지와 주차 시간을 고르면 가장 빨리 도착하는 주차장과 요금을 보여 줌](docs/images/screen-parking.png) | ![픽업 화면: 도착 시간을 고르면 언제 출발하면 되는지와 정차할 수 있는 곳을 보여 줌](docs/images/screen-pickup.png) |
+
+![차량 신호 화면: Pleos Vehicle SDK 신호값과 판정 상태](docs/images/screen-signals.png)
+
+release APK를 Pleos Connect Emulator v2.1.0에서 실행한 화면입니다(서버 연결 없이 앱 내장 데이터).
 
 ## 구성
 
@@ -76,11 +93,11 @@ release 빌드는 서버에 연결하지 않고, 앱에 내장한 구역·예측
 
 ```bash
 # Pleos Connect Emulator v2.1.0을 켠 뒤
-adb install -r -g apk/팀명_앱이름_release.apk   # -g: 위치 권한을 설치 때 허용
+adb install -r -g apk/사이클링크_트루파킹_release.apk   # -g: 위치 권한을 설치 때 허용
 adb shell am start -n app.last10min/.MainActivity
 ```
 
-- 앱 목록에서 **마지막 10분**을 눌러도 됩니다.
+- 앱 목록에서 **트루파킹**을 눌러도 됩니다.
 - 같은 패키지의 debug 빌드가 이미 설치되어 있으면 서명이 달라 설치가 거부됩니다. `adb uninstall app.last10min`으로 먼저 지우세요.
 - 화면: **주차** 탭(목적지·주차 시간 → 가장 빨리 도착하는 주차장), **픽업** 탭(목적지·도착 시간 → 출발 시각, 정차할 수 있는 곳), **차량 신호**(신호값·판정 상태).
 

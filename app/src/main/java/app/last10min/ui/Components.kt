@@ -218,7 +218,7 @@ private fun AppIcon() {
             .shadow(8.dp, shape)
             .background(Brush.verticalGradient(listOf(Color(0xFF3D8BFF), Color(0xFF0064FF))), shape),
         contentAlignment = Alignment.Center,
-    ) { PText("10", PleosType.titleSmall, Color.White) }
+    ) { PText("P", PleosType.titleSmall, Color.White) }
 }
 
 enum class Tone { NEUTRAL, ACTIVE, POSITIVE, NEGATIVE }

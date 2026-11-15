@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: "Asta Sans"; src: url("/app/src/main/res/font/asta_sans.ttf"); font-weight: 300 800; }
+  :root { --ink: #131417; --gray: #6B7079; --line: #C4CAD3; --blue: #0064FF; --blue-soft: #E8F0FF; --green: #02C265; --green-soft: #E3F8EE; }
+  body { margin: 0; background: transparent; font-family: "Asta Sans", "Apple SD Gothic Neo", sans-serif; color: var(--ink); }
+  #canvas { position: relative; width: 1440px; height: 690px; background: #FFFFFF; border-radius: 32px; overflow: hidden; }
+  .card { position: absolute; box-sizing: border-box; background: #fff; border: 2px solid #E3E7ED; border-radius: 20px; padding: 18px 22px; }
+  .title { font-size: 24px; font-weight: 800; letter-spacing: -0.2px; }
+  .sub { font-size: 17px; color: var(--gray); margin-top: 6px; }
+  .pill { display: inline-block; margin-top: 12px; padding: 6px 14px; border-radius: 999px; font-size: 17px; font-weight: 700; background: var(--blue-soft); color: var(--blue); }
+  .car { left: 48px; width: 312px; height: 128px; }
+  .server { left: 660px; top: 212px; width: 352px; border-color: var(--ink); border-width: 2.5px; }
+  .server ul { list-style: none; margin: 14px 0 0; padding: 0; }
+  .server li { font-size: 18px; line-height: 1.25; padding: 7px 0 7px 18px; position: relative; }
+  .server li::before { content: ""; position: absolute; left: 0; top: 16px; width: 7px; height: 7px; border-radius: 50%; background: var(--blue); }
+  .server li span { color: var(--gray); }
+  .next { left: 1140px; top: 232px; width: 260px; padding-bottom: 22px; border-color: var(--green); border-width: 2.5px; }
+  .next .title { color: var(--green); }
+  .next .row { font-size: 18px; font-weight: 700; margin-top: 12px; }
+  .next .note { font-size: 15px; color: var(--gray); margin-top: 12px; line-height: 1.35; }
+  .label { position: absolute; text-align: center; }
+  .tag { position: absolute; left: 384px; top: 270px; width: 240px; background: #fff; text-align: center; padding: 6px 0; }
+  .label .k { font-size: 20px; font-weight: 800; color: var(--blue); }
+  .label .v { font-size: 16px; color: var(--ink); margin-top: 4px; line-height: 1.35; }
+  .label .x { font-size: 15px; color: var(--gray); margin-top: 6px; }
+  .loop { position: absolute; left: 50%; top: 628px; transform: translateX(-50%); background: #fff; padding: 2px 16px; font-size: 18px; color: var(--gray); }
+  .loop b { color: var(--ink); }
+  svg { position: absolute; inset: 0; }
+</style>
+</head>
+<body>
+<div id="canvas">
+  <svg width="1440" height="690" viewBox="0 0 1440 690" aria-hidden="true">
+    <defs>
+      <marker id="a-blue" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L10,6 L1,11" fill="none" stroke="#0064FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+      <marker id="a-green" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L10,6 L1,11" fill="none" stroke="#02C265" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+      <marker id="a-gray" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L10,6 L1,11" fill="none" stroke="#9AA1AC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    </defs>
+    <path d="M360,144 L566,144 C626,144 618,296 654,296" fill="none" stroke="#0064FF" stroke-width="3" marker-end="url(#a-blue)"/>
+    <path d="M360,334 L654,334" fill="none" stroke="#0064FF" stroke-width="3" marker-end="url(#a-blue)"/>
+    <path d="M360,524 L566,524 C626,524 618,372 654,372" fill="none" stroke="#0064FF" stroke-width="3" marker-end="url(#a-blue)"/>
+    <path d="M1012,334 L1132,334" fill="none" stroke="#02C265" stroke-width="3.5" marker-end="url(#a-green)"/>
+    <path d="M1270,425 L1270,640 L204,640 L204,600" fill="none" stroke="#9AA1AC" stroke-width="2.5" stroke-dasharray="8 8" marker-end="url(#a-gray)"/>
+  </svg>
+
+  <div class="card car" style="top:80px"><div class="title">Pleos 차량</div><div class="sub">기어 · 문 · 좌석 신호로 판정</div><div class="pill">주차 완료 · 9분 40초</div></div>
+  <div class="card car" style="top:270px"><div class="title">Pleos 차량</div><div class="sub">기어 · 문 · 좌석 신호로 판정</div><div class="pill">주차 완료 · 2분 10초</div></div>
+  <div class="card car" style="top:460px"><div class="title">Pleos 차량</div><div class="sub">기어 · 문 · 좌석 신호로 판정</div><div class="pill">승하차 완료 · 4분</div></div>
+
+  <div class="tag label">
+    <div class="k">익명 이벤트</div>
+    <div class="v">구역 · 15분 시간대<br>걸린 시간 · 하루 단위 토큰</div>
+    <div class="x">경로 · 차량 식별 정보는 보내지 않음</div>
+  </div>
+
+  <div class="card server">
+    <div class="title">집계 서버</div>
+    <ul>
+      <li>구역 × 평일·주말 × 15분 집계</li>
+      <li>k-익명성 <span>주차 5대 · 승하차 10대</span></li>
+      <li>최근 30분 실시간 보정</li>
+      <li>혼잡 지점 발견 <span>10대 · 5일 이상</span></li>
+    </ul>
+  </div>
+
+  <div class="label" style="left:1012px; top:290px; width:120px"><div class="k" style="color:#02C265">예측</div></div>
+
+  <div class="card next">
+    <div class="title">다음 차</div>
+    <div class="row">가장 빨리 도착하는 주차장</div>
+    <div class="row">언제 출발하면 되는지</div>
+    <div class="note">혼잡 지점은 정보로만 표시<br>서버가 없으면 앱 내장 스냅샷</div>
+  </div>
+
+  <div class="loop"><b>다음 차의 주차</b>도 새 기록이 됩니다</div>
+</div>
+</body>
+</html>

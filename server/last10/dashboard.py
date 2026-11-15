@@ -2,7 +2,7 @@ DASHBOARD_HTML = """<!doctype html>
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<title>Pleos 차량이 만드는 데이터 · 마지막 10분</title>
+<title>Pleos 차량이 만드는 데이터 · 트루파킹</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   :root { --bg:#F7F8FA; --surface:#FFFFFF; --high:#EDEEF2; --text:#131417; --muted:rgba(19,20,23,.64); --faint:rgba(19,20,23,.32);
